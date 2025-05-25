@@ -23,9 +23,13 @@ jobs:
         working-directory: ./services/chat-service
         run: npm ci
 
-      - name: Run tests
+      - name: Run API tests
         working-directory: ./services/chat-service
-        run: npm test
+        run: npm test tests/chat.test.js
+
+      - name: Run WebSocket tests
+        working-directory: ./services/chat-service
+        run: npm test tests/socket.test.js
 
       - name: Build Docker image
         working-directory: ./services/chat-service
