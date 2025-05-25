@@ -1,0 +1,10 @@
+groups:
+  - name: notification_alerts
+    rules:
+      - alert: HighErrorRate
+        expr: rate(notifications_failed_total[5m]) > 5
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Tỷ lệ lỗi quá cao"

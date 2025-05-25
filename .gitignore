@@ -1,3 +1,5 @@
 services/auth-service/node_modules
 services/chat-service/node_modules
+services/notification-service/node_modules
+services/gateway-service/node_modules
 *.env

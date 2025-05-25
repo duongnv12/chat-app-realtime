@@ -1,0 +1,14 @@
+[2025-05-25T19:55:55.297Z] INFO: ::ffff:127.0.0.1 - - [25/May/2025:19:55:55 +0000] "GET /health HTTP/1.1" 200 45 "-" "-"
+[2025-05-25T19:57:38.465Z] INFO: ::ffff:127.0.0.1 - - [25/May/2025:19:57:38 +0000] "GET /health HTTP/1.1" 200 45 "-" "-"
+[2025-05-25T19:59:58.412Z] INFO: ::ffff:127.0.0.1 - - [25/May/2025:19:59:58 +0000] "GET /health HTTP/1.1" 200 45 "-" "-"
+[2025-05-25T20:04:12.928Z] INFO: ::ffff:127.0.0.1 - - [25/May/2025:20:04:12 +0000] "GET /health HTTP/1.1" 200 45 "-" "-"
+[2025-05-25T20:05:22.064Z] INFO: ::ffff:127.0.0.1 - - [25/May/2025:20:05:22 +0000] "GET /health HTTP/1.1" 200 45 "-" "-"
+[2025-05-25T20:06:41.326Z] INFO: ::ffff:127.0.0.1 - - [25/May/2025:20:06:41 +0000] "GET /health HTTP/1.1" 200 45 "-" "-"
+[2025-05-25T20:07:51.882Z] INFO: ::ffff:127.0.0.1 - - [25/May/2025:20:07:51 +0000] "GET /health HTTP/1.1" 200 45 "-" "-"
+[2025-05-25T20:08:08.858Z] INFO: ::ffff:127.0.0.1 - - [25/May/2025:20:08:08 +0000] "GET /health HTTP/1.1" 200 45 "-" "-"
+[2025-05-25T20:19:06.308Z] INFO: Notification WebSocket đang chạy tại http://localhost:3007
+[2025-05-25T20:19:06.380Z] INFO: ::ffff:127.0.0.1 - - [25/May/2025:20:19:06 +0000] "GET /health HTTP/1.1" 200 45 "-" "-"
+[2025-05-25T20:19:06.455Z] INFO: ⚡ Client connected: ihqAy1bZPNqeWJ3DAAAB
+[2025-05-25T20:20:00.793Z] INFO: Notification WebSocket đang chạy tại http://localhost:3007
+[2025-05-25T20:20:00.855Z] INFO: ::ffff:127.0.0.1 - - [25/May/2025:20:20:00 +0000] "GET /health HTTP/1.1" 200 45 "-" "-"
+[2025-05-25T20:20:00.953Z] INFO: ⚡ Client connected: sHfXvlw51Jydxx4OAAAB
