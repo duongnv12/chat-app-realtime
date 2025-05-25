@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI Pipeline - Root Directory
 
 on:
   push:
@@ -7,35 +7,30 @@ on:
     branches: [ main ]
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout mã nguồn
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Step 2: Setup Node.js (SETUP phiên bản Node.js mới nhất, ví dụ: 'node:latest' tương đương v24.0.2 hoặc tương tự)
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 'lts/*'
 
-      # Step 3: Cài đặt dependency
       - name: Install dependencies
-        working-directory: ./services/auth-service
         run: npm ci
 
-      # Step 4: Chạy các bài kiểm thử (unit & integration tests)
-      - name: Run tests
+      - name: Run tests for Auth Service
         working-directory: ./services/auth-service
         run: npm test
 
-      # Optionally: Step 5: Build Docker image của Auth service
-      - name: Build Docker image
-        working-directory: ./services/auth-service
-        run: docker build -t chat-app-realtime-auth-service .
+      - name: Run tests for Chat Service
+        working-directory: ./services/chat-service
+        run: npm test
 
-      # Nếu bạn có sử dụng Docker Compose để chạy tích hợp cho tổng dự án, có thể thêm bước sau:
-      #- name: Run integration tests with Docker Compose
-      #  run: docker compose up --abort-on-container-exit --build
+      - name: Build Docker images
+        run: |
+          docker build -t chat-app-realtime-auth-service ./services/auth-service
+          docker build -t chat-app-realtime-chat-service ./services/chat-service
