@@ -1,3 +1,4 @@
+# chat-service/Dockerfile
 FROM node:latest
 
 WORKDIR /usr/src/app
@@ -7,7 +8,7 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3001
+EXPOSE 3002
 
 CMD ["node", "src/server.js"]
 

@@ -1,43 +1,43 @@
-version: "3.8"
+version: "3.9"
 
 services:
   auth-service:
     build: ./services/auth-service
+    container_name: auth-service
     ports:
       - "3001:3001"
     environment:
       - PORT=3001
+      - MONGO_URI=mongodb://mongo-db:27017/chatapp
+      - JWT_SECRET=40bdb329c3d488d3c38a668c1da0d0163c2a3635211bffb626eb0116510e2452
     depends_on:
-      - mongo-db  # nếu có CSDL mongo, ví dụ
-  
+      - mongo-db
+
   chat-service:
     build: ./services/chat-service
+    container_name: chat-service
     ports:
       - "3002:3002"
     environment:
       - PORT=3002
+      - MONGO_URI=mongodb://mongo-db:27017/chatapp
+      - JWT_SECRET=y40bdb329c3d488d3c38a668c1da0d0163c2a3635211bffb626eb0116510e2452
+    depends_on:
+      - mongo-db
 
-  notification-service:
-    build: ./services/notification-service
-    ports:
-      - "3003:3003"
-    environment:
-      - PORT=3003
-
-  gateway-service:
-    build: ./services/gateway-service
-    ports:
-      - "3000:3000"
-    environment:
-      - PORT=3000
-
-  # Ví dụ: thêm container cho MongoDB nếu cần:
   mongo-db:
     image: mongo
+    container_name: mongo-db
     ports:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
+
+  redis:
+    image: redis
+    container_name: redis
+    ports:
+      - "6379:6379"
 
 volumes:
   mongo-data:
